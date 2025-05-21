@@ -21,6 +21,7 @@ button {
     width: 100px;
     height: 100px;
     font-size: 50px;
+    cursor: pointer;
 }
 #randomize {
     font-size: 20px;
