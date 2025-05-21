@@ -44,7 +44,8 @@ styleElement.innerHTML = `
 `;
 //append the style element to the head
 head.append(styleElement);
-
+// creating the sentence with the selectors to display on the page
+sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 // button event listeners
 noun.addEventListener("click", function () {
     // increment the nounClick variable to move the selector down the table
@@ -75,6 +76,8 @@ noun.addEventListener("click", function () {
 `;
     // updating the nounSelector variable to show the selected noun
     nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
+    // updating the sentence variable to show the the complete sentence
+    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 });
 verb.addEventListener("click", function () {
     // increment the verbClick variable to move the selector down the table
@@ -105,6 +108,8 @@ verb.addEventListener("click", function () {
 `;
     // updating the verbSelector variable to show the selected noun
     verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
+    // updating the sentence variable to show the the complete sentence
+    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 });
 adj.addEventListener("click", function () {
     // increment the adjClick variable to move the selector down the table
@@ -135,6 +140,8 @@ adj.addEventListener("click", function () {
 `;
     // updating the adjSelector variable to show the selected noun
     adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
+    // updating the sentence variable to show the the complete sentence
+    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 });
 secondNoun.addEventListener("click", function () {
     // increment the secondNounClick variable to move the selector down the table
@@ -165,6 +172,8 @@ secondNoun.addEventListener("click", function () {
 `;
     // updating the secondNounSelector variable to show the selected noun
     secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4)`);
+    // updating the sentence variable to show the the complete sentence
+    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 });
 place.addEventListener("click", function () {
     // increment the placeClick variable to move the selector down the table
@@ -195,5 +204,7 @@ place.addEventListener("click", function () {
 `;
     // updating the placeSelector variable to show the selected noun
     placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
+    // updating the sentence variable to show the the complete sentence
+    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
 });
 
