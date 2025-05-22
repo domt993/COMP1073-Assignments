@@ -96,8 +96,8 @@ place.addEventListener("click", function () {
 
 // surprise button event listener
 surprise.addEventListener("click", function() {
-    // randomizing the nounClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
+    // randomizing the click variables to move the selector down the table
+    // each number is randomized to a number between 1 and the number of rows in the table
     nounClick = Math.floor(Math.random() * 6) + 1;
     verbClick = Math.floor(Math.random() * 5) + 1;
     adjClick = Math.floor(Math.random() * 5) + 1;
