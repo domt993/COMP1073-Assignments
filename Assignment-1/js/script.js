@@ -16,38 +16,13 @@ const place = document.querySelector("#place");
 const sentence = document.querySelector("#finalSentence")
 const surprise = document.querySelector("#randomize");
 
-//the content that will be selected to be apart of the sentence selectors
-//initialization and declaration
-let nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
-let verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
-let adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
-let secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(4)`);
-let placeSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(5)`);
-// creating a style element to show what is selected when the button is clicked
+// creating style element to be able to the selected words
 const styleElement = document.createElement("style");
-// css styling that corresponds to button clicks
-styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
 //append the style element to the head
 head.append(styleElement);
 
-// creating the sentence with the selectors to display on the page
-sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+//calling update function to update the selected words
+update();
 
 // noun button event listeners
 noun.addEventListener("click", function () {
@@ -59,28 +34,8 @@ noun.addEventListener("click", function () {
     else {
         nounClick++;
     }
-    // updating the style element to show the selected noun
-    styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
-    // updating the nounSelector variable to show the selected noun
-    nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
-    // updating the sentence variable to show the the complete sentence
-    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+    // calling the update function to show the new selected word
+   update();
 });
 
 // verb button event listener
@@ -93,28 +48,8 @@ verb.addEventListener("click", function () {
     else {
         verbClick++;
     }
-    // updating the style element to show the selected noun
-    styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
-    // updating the verbSelector variable to show the selected noun
-    verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
-    // updating the sentence variable to show the the complete sentence
-    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+    // calling the update function to show the new selected word
+    update();
 });
 
 // adjective button event listener
@@ -127,28 +62,8 @@ adj.addEventListener("click", function () {
     else {
         adjClick++;
     }
-    // updating the style element to show the selected noun
-    styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
-    // updating the adjSelector variable to show the selected noun
-    adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
-    // updating the sentence variable to show the the complete sentence
-    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+    // calling the update function to show the new selected word
+    update();
 });
 
 // second noun button event listener
@@ -161,28 +76,8 @@ secondNoun.addEventListener("click", function () {
     else {
         secondNounClick++;
     }
-    // updating the style element to show the selected noun
-    styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
-    // updating the secondNounSelector variable to show the selected noun
-    secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4)`);
-    // updating the sentence variable to show the the complete sentence
-    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+    // calling the update function to show the new selected word
+    update();
 });
 
 // place button event listener
@@ -195,28 +90,8 @@ place.addEventListener("click", function () {
     else {
         placeClick++;
     }
-    // updating the style element to show the selected noun
-    styleElement.innerHTML = `
-    tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
-        background-color: rgb(141, 0, 141);
-    }
-    tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2) {
-        background-color: aqua;
-    }
-    tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3) {
-        background-color: green;
-    }
-    tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4) {
-        background-color: orange;
-    }
-    tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
-        background-color: rgb(219, 63, 219);
-    }
-`;
-    // updating the placeSelector variable to show the selected noun
-    placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
-    // updating the sentence variable to show the the complete sentence
-    sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+    // calling the update function to show the new selected word
+    update();
 });
 
 // surprise button event listener
@@ -228,7 +103,13 @@ surprise.addEventListener("click", function() {
     adjClick = Math.floor(Math.random() * 5) + 1;
     secondNounClick = Math.floor(Math.random() * 6) + 1;
     placeClick = Math.floor(Math.random() * 5) + 1;
+    // calling the update function to show the new selected word
+    update();
+});
 
+// update function
+// allows for easy updating of selections whilst also removing reduncdancy of large code blocks and size of the code
+function update() {
     // updating the style element to show the selected noun
     styleElement.innerHTML = `
     tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
@@ -246,7 +127,7 @@ surprise.addEventListener("click", function() {
     tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5) {
         background-color: rgb(219, 63, 219);
     }
-`;
+    `;
     // updating the nounSelector variable to show the selected noun
     nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
     // updating the verbSelector variable to show the selected noun
@@ -259,4 +140,4 @@ surprise.addEventListener("click", function() {
     placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
     // updating the sentence variable to show the the complete sentence
     sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
-});
+}
