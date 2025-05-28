@@ -1,4 +1,4 @@
-
+let nounSelector, placeSelector, verbSelector, adjSelector, secondNounSelector;
 // click counter variable initialization and declaration
 let nounClick = 1;
 let verbClick = 1;
@@ -26,72 +26,42 @@ update();
 
 // noun button event listeners
 noun.addEventListener("click", function () {
-    // increment the nounClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
-    if (nounClick > 6) {
-        nounClick = 1;
-    }
-    else {
-        nounClick++;
-    }
+    // calling clicks function to handle the click variable and reset it if it exceeds the maximum number of rows
+    nounClick = clicks(nounClick, 5);
     // calling the update function to show the new selected word
-   update();
+    update("noun");
 });
 
 // verb button event listener
 verb.addEventListener("click", function () {
-    // increment the verbClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
-    if (verbClick > 5) {
-        verbClick = 1;
-    }
-    else {
-        verbClick++;
-    }
+    // calling clicks function to handle the click variable and reset it if it exceeds the maximum number of rows
+    verbClick = clicks(verbClick, 5);
     // calling the update function to show the new selected word
-    update();
+    update("verb");
 });
 
 // adjective button event listener
 adj.addEventListener("click", function () {
-    // increment the adjClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
-    if (adjClick > 5) {
-        adjClick = 1;
-    }
-    else {
-        adjClick++;
-    }
+    // calling clicks function to handle the click variable and reset it if it exceeds the maximum number of rows
+    adjClick = clicks(adjClick, 5);
     // calling the update function to show the new selected word
-    update();
+    update("adj");
 });
 
 // second noun button event listener
 secondNoun.addEventListener("click", function () {
-    // increment the secondNounClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
-    if (secondNounClick > 6) {
-        secondNounClick = 1;
-    }
-    else {
-        secondNounClick++;
-    }
+    // calling clicks function to handle the click variable and reset it if it exceeds the maximum number of rows
+    secondNounClick = clicks(secondNounClick, 6);
     // calling the update function to show the new selected word
-    update();
+    update("secondNoun");
 });
 
 // place button event listener
 place.addEventListener("click", function () {
-    // increment the placeClick variable to move the selector down the table
-    // if the variable is greater than the number of rows in the table, reset it to 1
-    if (placeClick > 5) {
-        placeClick = 1;
-    }
-    else {
-        placeClick++;
-    }
+    // calling clicks function to handle the click variable and reset it if it exceeds the maximum number of rows
+    placeClick = clicks(placeClick, 5);
     // calling the update function to show the new selected word
-    update();
+    update("place");
 });
 
 // surprise button event listener
@@ -109,7 +79,7 @@ surprise.addEventListener("click", function() {
 
 // update function
 // allows for easy updating of selections whilst also removing reduncdancy of large code blocks and size of the code
-function update() {
+function update(element) {
     // updating the style element to show the selected noun
     styleElement.innerHTML = `
     tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1) {
@@ -128,16 +98,49 @@ function update() {
         background-color: rgb(219, 63, 219);
     }
     `;
-    // updating the nounSelector variable to show the selected noun
-    nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
-    // updating the verbSelector variable to show the selected noun
-    verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
-    // updating the adjSelector variable to show the selected noun
-    adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
-    // updating the secondNounSelector variable to show the selected noun
-    secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4)`);
-    // updating the placeSelector variable to show the selected noun
-    placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
+    // switch to only update the clicked element
+    switch (element) {
+        case "noun":
+            // updating the nounSelector variable to show the selected noun
+            nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
+            break;
+        case "verb":
+            // updating the verbSelector variable to show the selected noun
+            verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
+            break;
+        case "adj":
+            // updating the adjSelector variable to show the selected noun
+            adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
+            break;
+        case "secondNoun":
+             // updating the secondNounSelector variable to show the selected noun
+            secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4)`);
+            break;
+        case "place":
+            // updating the placeSelector variable to show the selected noun
+            placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
+            break;
+        default:
+            // updating the nounSelector variable to show the selected noun
+            nounSelector = document.querySelector(`tbody tr:nth-of-type(${nounClick}) td:nth-of-type(1)`);
+            // updating the verbSelector variable to show the selected noun
+            verbSelector = document.querySelector(`tbody tr:nth-of-type(${verbClick}) td:nth-of-type(2)`);
+            // updating the adjSelector variable to show the selected noun
+            adjSelector = document.querySelector(`tbody tr:nth-of-type(${adjClick}) td:nth-of-type(3)`);
+            // updating the secondNounSelector variable to show the selected noun
+            secondNounSelector = document.querySelector(`tbody tr:nth-of-type(${secondNounClick}) td:nth-of-type(4)`);
+            // updating the placeSelector variable to show the selected noun
+            placeSelector = document.querySelector(`tbody tr:nth-of-type(${placeClick}) td:nth-of-type(5)`);
+            break;
+    }
+    
     // updating the sentence variable to show the the complete sentence
     sentence.textContent = `${nounSelector.textContent} ${verbSelector.textContent} ${adjSelector.textContent} ${secondNounSelector.textContent} ${placeSelector.textContent}` ;
+}
+
+// clicks function
+// function to handle the click variables and reset them if they exceed the maximum number of rows
+function clicks(clickVar, max) {
+    // if the click variable is greater than the maximum number of rows, reset it to 1
+    return clickVar > max ? 1 : clickVar + 1;
 }
