@@ -14,13 +14,14 @@ td {
     border: black 1px solid;
     text-align: center;
     width: 100px;
+    font-size: 30px;
 }
 button {
     border-radius: 50%;
     border: black 2px solid;
     width: 100px;
     height: 100px;
-    font-size: 50px;
+    font-size: 40px;
     cursor: pointer;
 }
 #randomize {
@@ -41,4 +42,8 @@ button {
 }
 #place {
     background-color: rgb(219, 63, 219);
+}
+
+#finalSentence {
+    font-size: 50px;
 }
