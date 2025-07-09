@@ -1,0 +1,52 @@
+body {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 50vw;
+    background-color: aqua;
+}
+h1 {
+    text-align: center;
+}
+#smoothie-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    height: 325px;
+    border-radius: 20px;
+}
+#smoothie-price {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#smoothie-form .select-container:last-of-type {
+    margin-bottom: 20px;
+}
+.select-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+#smoothie-details {
+    background-color: white;
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
