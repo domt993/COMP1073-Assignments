@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/script.js" defer></script>
+        <link rel="stylesheet" href="./css/styles.css">
+        <title>Assignment 2 | Smoothie Machine</title>
+    </head>
+    <body>
+        
+        <div id="smoothie-div">
+            <h1>Smoothie Machine</h1>
+            <form id="smoothie-form">
+                <div class="select-container">
+                    <p>Price: Free</p>
+                    <!-- First Fruit Selection -->
+                    <select id="first-fruit-select">
+                        <option>Select a First Fruit</option>
+                        <option value="apple">Apple</option>
+                        <option value="orange">Orange</option>
+                        <option value="grape">Grape</option>
+                        <option value="kiwi">Kiwi</option>
+                        <option value="peach">Peach</option>
+                    </select>
+                </div>
+                
+                <div class="select-container">
+                    <p>Price: +$1.99</p>
+                    <!-- Second Fruit Selection -->
+                    <select id="second-fruit-select">
+                        <option>Select a Second Fruit</option>
+                        <option value="banana">Banana</option>
+                        <option value="strawberry">Strawberry</option>
+                        <option value="mango">Mango</option>
+                        <option value="blueberry">Blueberry</option>
+                        <option value="pineapple">Pineapple</option>
+                    </select>
+                </div>
+                <div class="select-container">
+                    <p>Price: +$2.99</p>
+                    <!-- Third Fruit Selection -->
+                    <select id="third-fruit-select">
+                        <option>Select a Third Fruit</option>
+                        <option value="watermelon">Watermelon</option>
+                        <option value="raspberry">Raspberry</option>
+                        <option value="blackberry">Blackberry</option>
+                        <option value="coconut">Coconut</option>
+                        <option value="papaya">Papaya</option>
+                    </select>
+                </div>
+                <!-- Liquid Selection -->
+                <div class="select-container">
+                    <p>Price: Varies</p>
+                    <select id="liquid-select">
+                        <option>Select a Liquid</option>
+                        <option value="water">Water</option>
+                        <option value="milk">Milk</option>
+                        <option value="juice">Juice</option>
+                    </select>
+                </div>
+                <!-- Smoothie Size Selection -->
+                <div class="select-container">
+                    <p>Price: Varies</p>
+                    <select id="size-select">
+                        <option>Select a Smoothie Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <button type="submit" id="make-smoothie">Make Smoothie</button>
+            </form>
+            <!-- Total Price Display -->
+            <p id="smoothie-price">Total Price: $<span id="total-price">0</span></p>
+        </div>
+        <!-- Smoothie Details Display -->
+        <div id="smoothie-details">
+            <h2>Smoothie Details</h2>
+            <p>First Fruit: <span id="first-fruit"></span></p>
+            <p>Second Fruit: <span id="second-fruit"></span></p>
+            <p>Third Fruit: <span id="third-fruit"></span></p>
+            <p>Liquid: <span id="liquid"></span></p>
+            <p>Size: <span id="size"></span></p>
+        </div>
+    </body>
+</html>
