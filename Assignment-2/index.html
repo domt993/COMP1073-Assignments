@@ -12,11 +12,11 @@
         <div id="smoothie-div">
             <h1>Smoothie Machine</h1>
             <form id="smoothie-form">
+                <label for="first-fruit-select">Select First Fruit</label>
                 <div class="select-container">
                     <p>Price: Free</p>
                     <!-- First Fruit Selection -->
                     <select id="first-fruit-select">
-                        <option>Select a First Fruit</option>
                         <option value="apple">Apple</option>
                         <option value="orange">Orange</option>
                         <option value="grape">Grape</option>
@@ -24,12 +24,12 @@
                         <option value="peach">Peach</option>
                     </select>
                 </div>
-                
+                <label for="second-fruit-select">Select Second Fruit</label>
                 <div class="select-container">
                     <p>Price: +$1.99</p>
                     <!-- Second Fruit Selection -->
                     <select id="second-fruit-select">
-                        <option>Select a Second Fruit</option>
+                        <option value="None">None</option>
                         <option value="banana">Banana</option>
                         <option value="strawberry">Strawberry</option>
                         <option value="mango">Mango</option>
@@ -37,11 +37,12 @@
                         <option value="pineapple">Pineapple</option>
                     </select>
                 </div>
+                <label for="third-fruit-select">Select Third Fruit</label>
                 <div class="select-container">
                     <p>Price: +$2.99</p>
                     <!-- Third Fruit Selection -->
                     <select id="third-fruit-select">
-                        <option>Select a Third Fruit</option>
+                        <option value="None">None</option>
                         <option value="watermelon">Watermelon</option>
                         <option value="raspberry">Raspberry</option>
                         <option value="blackberry">Blackberry</option>
@@ -49,21 +50,21 @@
                         <option value="papaya">Papaya</option>
                     </select>
                 </div>
+                <label for="liquid-select">Select Liquid</label>
                 <!-- Liquid Selection -->
                 <div class="select-container">
                     <p>Price: Varies</p>
                     <select id="liquid-select">
-                        <option>Select a Liquid</option>
                         <option value="water">Water</option>
                         <option value="milk">Milk</option>
                         <option value="juice">Juice</option>
                     </select>
                 </div>
+                <label for="size-select">Select Smoothie Size</label>
                 <!-- Smoothie Size Selection -->
                 <div class="select-container">
                     <p>Price: Varies</p>
                     <select id="size-select">
-                        <option>Select a Smoothie Size</option>
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
@@ -76,6 +77,10 @@
         </div>
         <!-- Smoothie Details Display -->
         <div id="smoothie-details">
+            <label for="smoothie-select">Select a Smoothie</label>
+            <select id="smoothie-select">
+                <option>Select a Smoothie</option>
+            </select>
             <h2>Smoothie Details</h2>
             <p>First Fruit: <span id="first-fruit"></span></p>
             <p>Second Fruit: <span id="second-fruit"></span></p>
