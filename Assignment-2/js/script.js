@@ -18,17 +18,18 @@ class Smoothie {
         // Declare and Initialize the TotalPrice Variable
         let totalPrice = 0;
         // If the second and third fruit are selected as options
+        if (this.firstFruit !== "None") {totalPrice += 0.99;}
         if (this.secondFruit !== "None") {totalPrice += 1.99;}
         if (this.thirdFruit !== "None") {totalPrice += 2.99;}
         
         switch (this.liquid) {
-            case "Water":
-                totalPrice += 0; // Free
+            case "water":
+                totalPrice += 0.99;
                 break;
-            case "Milk":
+            case "milk":
                 totalPrice += 1.49;
                 break;
-            case "Juice":
+            case "juice":
                 totalPrice += 2.49;
                 break;
             default:
@@ -36,14 +37,14 @@ class Smoothie {
         }
 
         switch (this.size) {
-            case "Small":
-                totalPrice += 0; // Free
-                break;
-            case "Medium":
+            case "small":
                 totalPrice += 1.99;
                 break;
-            case "Large":
+            case "medium":
                 totalPrice += 2.99;
+                break;
+            case "large":
+                totalPrice += 3.99;
                 break;
             default:
                 break;
@@ -51,3 +52,23 @@ class Smoothie {
     return totalPrice;
     }
 }
+
+// Storing the form elements in variables
+const form = document.getElementById("smoothie-form");
+const firstFruitSelect = document.getElementById("first-fruit-select");
+const secondFruitSelect = document.getElementById("second-fruit-select");
+const thirdFruitSelect = document.getElementById("third-fruit-select");
+const liquidSelect = document.getElementById("liquid-select");
+const sizeSelect = document.getElementById("size-select");
+const smoothieSelect = document.getElementById("smoothie-select");
+const smoothieDetails = document.getElementById("smoothie-details");
+const totalPriceDisplay = document.getElementById("total-price");
+
+// Smoothie Name Variable 
+let smoothieName;
+
+// Smoothie Object Variable
+let smoothie;
+
+// Smoothie Array to store all smoothies created by the user
+let smoothies = [];

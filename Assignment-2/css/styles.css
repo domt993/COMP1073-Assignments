@@ -9,6 +9,9 @@ body {
 }
 h1 {
     text-align: center;
+    background-color: white;
+    padding: 5px;
+    border-radius: 20px;
 }
 #smoothie-form {
     background-color: white;
@@ -40,10 +43,19 @@ h1 {
     width: 100%;
 }
 
-#smoothie-details {
+#smoothie-details-container {
     background-color: white;
     padding: 20px;
-    height: 400px;
+    height: 475px;
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+#smoothie-details {
+    height: 450px;
     width: 375px;
     display: flex;
     flex-direction: column;

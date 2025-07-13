@@ -14,7 +14,7 @@
             <form id="smoothie-form">
                 <label for="first-fruit-select">Select First Fruit</label>
                 <div class="select-container">
-                    <p>Price: Free</p>
+                    <p>Price: +$0.99</p>
                     <!-- First Fruit Selection -->
                     <select id="first-fruit-select">
                         <option value="apple">Apple</option>
@@ -55,9 +55,9 @@
                 <div class="select-container">
                     <p>Price: Varies</p>
                     <select id="liquid-select">
-                        <option value="water">Water</option>
-                        <option value="milk">Milk</option>
-                        <option value="juice">Juice</option>
+                        <option value="water">Water +$0.99</option>
+                        <option value="milk">Milk +$1.49</option>
+                        <option value="juice">Juice +$2.49</option>
                     </select>
                 </div>
                 <label for="size-select">Select Smoothie Size</label>
@@ -65,9 +65,9 @@
                 <div class="select-container">
                     <p>Price: Varies</p>
                     <select id="size-select">
-                        <option value="small">Small</option>
-                        <option value="medium">Medium</option>
-                        <option value="large">Large</option>
+                        <option value="small">Small +$1.99</option>
+                        <option value="medium">Medium +$2.99</option>
+                        <option value="large">Large +$3.99</option>
                     </select>
                 </div>
                 <button type="submit" id="make-smoothie">Make Smoothie</button>
@@ -76,17 +76,22 @@
             <p id="smoothie-price">Total Price: $<span id="total-price">0</span></p>
         </div>
         <!-- Smoothie Details Display -->
-        <div id="smoothie-details">
+        <div id="smoothie-details-container">
             <label for="smoothie-select">Select a Smoothie</label>
             <select id="smoothie-select">
                 <option>Select a Smoothie</option>
             </select>
-            <h2>Smoothie Details</h2>
-            <p>First Fruit: <span id="first-fruit"></span></p>
-            <p>Second Fruit: <span id="second-fruit"></span></p>
-            <p>Third Fruit: <span id="third-fruit"></span></p>
-            <p>Liquid: <span id="liquid"></span></p>
-            <p>Size: <span id="size"></span></p>
+            <div id="smoothie-details">
+                <h2>Smoothie Details</h2>
+                <p>Smoothie Name: <span id="smoothie-name"></span></p>
+                <p>First Fruit: <span id="first-fruit"></span></p>
+                <p>Second Fruit: <span id="second-fruit"></span></p>
+                <p>Third Fruit: <span id="third-fruit"></span></p>
+                <p>Liquid: <span id="liquid"></span></p>
+                <p>Size: <span id="size"></span></p>
+                <p>Total Price: $<span id="smoothie-total-price">0</span></p>
+            </div>
+            
         </div>
     </body>
 </html>
