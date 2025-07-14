@@ -52,7 +52,8 @@ class Smoothie {
             default:
                 break;
         }
-    return totalPrice;
+    // Return the total price rounded to two decimal places
+    return totalPrice.toFixed(2);;
     }
 }
 
@@ -108,44 +109,72 @@ form.addEventListener("submit", (e) => {
     // Add the smoothie to the smoothies array
     smoothies.push({Name: smoothieName, Smoothie: smoothie});
 
-    // Display the smoothie Name in the dropdown list
-    const option = document.createElement("option");
+    // Add the smoothie name to the select dropdown
+    addSmoothieToSelect(smoothieName);
 
-    // Set the value and text content of the option to the smoothie name
-    option.value = smoothieName;
-    option.textContent = smoothieName;
-
-    // Append the option to the smoothie select dropdown
-    smoothieSelect.appendChild(option);
     // Display the smoothie name in the Details Section
     smoothieSelect.value = smoothieName;
-    smoothieDetails.innerHTML = `
-        <h2>Smoothie Details</h2>
-        <p>Smoothie Name: ${smoothieName}</p>
-        <p>First Fruit: ${titleCase(smoothie.firstFruit)}</p>
-        <p>Second Fruit: ${titleCase(smoothie.secondFruit)}</p>
-        <p>Third Fruit: ${titleCase(smoothie.thirdFruit)}</p>
-        <p>Liquid: ${titleCase(smoothie.liquid)}</p>
-        <p>Size: ${titleCase(smoothie.size)}</p>
-        <p>Total Price: $${smoothie.calculatePrice().toFixed(2)}</p>
-    `;
+
+    // Show the smoothie details in the Details Section
+    smoothieDetailsHTML("create");
+
     // Reset the form
     form.reset();
 });
 
 smoothieSelect.addEventListener("change", (e) => {
-    // Show the smoothie details when a smoothie is selected from the dropdown
+    // Store the selected smoothie object name in a variable
     const selectedSmoothieName = e.target.value;
 
     // for each smoothie in the smoothies array, find the one that matches the selected smoothie name
     for (const smoothieObj of smoothies) {
         if (smoothieObj.Name === selectedSmoothieName) {
-            selectedSmoothie = smoothieObj;
+            selectedSmoothieName = smoothieObj;
             break;
         }
     }
     // If the selected smoothie is found, display its details
-    if (selectedSmoothie) {
+    if (selectedSmoothieName) {
+        smoothieDetailsHTML("select");
+    }
+});
+
+// Function to Title Case the Smoothie Details
+function titleCase(str) {
+    // Split the string by a space, map each word to capitalize its first letter, and join them back together
+    return str.split(' ').map(str => str.replace(str[0], str[0].toUpperCase())).join(' ');
+}
+
+// Function to add a new smoothie option to the select dropdown
+function addSmoothieToSelect(smoothieName) {
+    // Create a new option element
+    const option = document.createElement("option");
+
+    // Set the value and text content of the option to the smoothie name
+    option.value = smoothieName;
+    option.textContent = smoothieName;
+    
+    // Append the option to the smoothie select dropdown
+    smoothieSelect.appendChild(option);
+}
+
+// Function to display the smoothie details in the Details Section
+function smoothieDetailsHTML(which) {
+    // If the smoothie is being created, display the details of the newly created smoothie
+    if (which === "create") {
+        smoothieDetails.innerHTML = `
+            <h2>Smoothie Details</h2>
+            <p>Smoothie Name: ${titleCase(smoothieName)}</p>
+            <p>First Fruit: ${titleCase(smoothie.firstFruit)}</p>
+            <p>Second Fruit: ${titleCase(smoothie.secondFruit)}</p>
+            <p>Third Fruit: ${titleCase(smoothie.thirdFruit)}</p>
+            <p>Liquid: ${titleCase(smoothie.liquid)}</p>
+            <p>Size: ${titleCase(smoothie.size)}</p>
+            <p>Total Price: $${smoothie.calculatePrice()}</p>
+        `;
+    }
+    else if (which === "select") {
+        // If a smoothie is selected from the dropdown, display its details using the selectedSmoothie variable
         smoothieDetails.innerHTML = `
             <h2>Smoothie Details</h2>
             <p>Smoothie Name: ${selectedSmoothie.Name}</p>
@@ -154,12 +183,7 @@ smoothieSelect.addEventListener("change", (e) => {
             <p>Third Fruit: ${titleCase(selectedSmoothie.Smoothie.thirdFruit)}</p>
             <p>Liquid: ${titleCase(selectedSmoothie.Smoothie.liquid)}</p>
             <p>Size: ${titleCase(selectedSmoothie.Smoothie.size)}</p>
-            <p>Total Price: $${selectedSmoothie.Smoothie.calculatePrice().toFixed(2)}</p>
+            <p>Total Price: $${selectedSmoothie.Smoothie.calculatePrice()}</p>
         `;
     }
-});
-
-// Function to Title Case the Smoothie Details
-function titleCase(str) {
-    return str.replace(str[0], str[0].toUpperCase());
 }
