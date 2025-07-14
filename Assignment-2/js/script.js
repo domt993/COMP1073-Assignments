@@ -125,16 +125,15 @@ form.addEventListener("submit", (e) => {
 smoothieSelect.addEventListener("change", (e) => {
     // Store the selected smoothie object name in a variable
     const selectedSmoothieName = e.target.value;
-
     // for each smoothie in the smoothies array, find the one that matches the selected smoothie name
     for (const smoothieObj of smoothies) {
         if (smoothieObj.Name === selectedSmoothieName) {
-            selectedSmoothieName = smoothieObj;
+            selectedSmoothie = smoothieObj;
             break;
         }
     }
     // If the selected smoothie is found, display its details
-    if (selectedSmoothieName) {
+    if (selectedSmoothie) {
         smoothieDetailsHTML("select");
     }
 });
