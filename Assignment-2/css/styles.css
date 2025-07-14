@@ -1,3 +1,4 @@
+/* Styling the Body */
 body {
     margin: 0 auto;
     display: flex;
@@ -5,14 +6,26 @@ body {
     justify-content: space-between;
     height: 100vh;
     width: 50vw;
-    background-color: aqua;
+    background: linear-gradient(to bottom right, #ae00ff 50%, #0db498);
+
 }
+
+/* Styling the Heading */
+
 h1 {
     text-align: center;
     background-color: white;
-    padding: 5px;
+    padding: 20px;
     border-radius: 20px;
+    width: 100%;
 }
+
+/* Sizing the Smoothie Div */
+#smoothie-div {
+    width: 350px;
+}
+
+/* Styling the Smoothie Form */
 #smoothie-form {
     background-color: white;
     display: flex;
@@ -21,20 +34,30 @@ h1 {
     align-items: center;
     padding: 20px;
     height: 400px;
-    width: 275px;
+    width: 100%;
     border-radius: 20px;
 }
-#smoothie-price {
+
+#smoothie-form .select-container:last-of-type {
+    margin-bottom: 20px;
+}
+
+/* Styling the Message Display */
+#smoothie-message-display {
     background-color: white;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    width: 100%;
 }
-#smoothie-form .select-container:last-of-type {
-    margin-bottom: 20px;
+
+#smoothie-message-hidden {
+    display: none;
 }
+
+/* Styling the Select Containers */
 .select-container {
     display: flex;
     align-items: center;
@@ -43,17 +66,25 @@ h1 {
     width: 100%;
 }
 
+/* Styling the Container holding the Smoothie Details */
 #smoothie-details-container {
     background-color: white;
     padding: 20px;
-    height: 475px;
-    width: 375px;
+    height: 550px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
 }
+
+/* Adding Margin Bottom */
+#smoothie-select {
+    margin-bottom: 20px;
+}
+
+/* Styling the Smoothie Details */
 #smoothie-details {
     height: 450px;
     width: 375px;
@@ -62,8 +93,26 @@ h1 {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.705);
+    margin-bottom: 20px;
 }
 
+#smoothie-details p:last-of-type {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.705);
+    padding: 10px;
+    color: white;
+    background-color: #8e9291;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 50%;
+}
+
+/* Styling the Smoothie Select Label */
 [for="smoothie-select"] {
     margin: 10px;
+}
+select, option, button {
+    padding: 5px;
+    border-radius: 10px;
 }
