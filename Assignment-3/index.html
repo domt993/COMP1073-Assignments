@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- Meta Data -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="./js/script.js" defer></script>
@@ -8,19 +9,24 @@
         <title>Assignment 3 | Working with APIs</title>
     </head>
     <body>
+        <!-- Form to capture the user's inputs -->
         <form>
-        <label>Platform:</label>
-        <input type="radio" name="platform" value="pc">
-        <label>PC</label>
-        <input type="radio" name="platform" value="browser">
-        <label>Browser</label>
-        <input type="radio" name="platform" value="all">
-        <label>All</label>
-
-        <h1>Search for a game!</h1>
-        <input type="text" id="searchInput" placeholder="Enter game title...">
-        <button id="searchButton" type="submit">Search</button>
+            <div>
+                <label>Platform:</label>
+                <input type="radio" name="platform" value="pc">
+                <label>PC</label>
+                <input type="radio" name="platform" value="browser">
+                <label>Browser</label>
+                <input type="radio" name="platform" value="all">
+                <label>All</label>
+            </div>
+            <div>
+                <h1>Search for a game!</h1>
+                <input type="text" id="searchInput" placeholder="Enter game title...">
+                <button id="searchButton" type="submit">Search</button>
+            </div>
         </form>
+        <!-- Search Results Section displayed by a table -->
         <h2>Search Results</h2>
         <div id="list">
             <table>
@@ -37,6 +43,7 @@
             </tbody>
         </table>
         </div>
+        <!-- Details Section where the selected game's details are displayed -->
         <div id="details">
             <!-- Selected Game Details will be populated here -->
         </div>

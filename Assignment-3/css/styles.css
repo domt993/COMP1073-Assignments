@@ -1,13 +1,92 @@
+body {
+    background: linear-gradient(to bottom right, #69b47c 50%, #3b4db1);
+    
+}
 table {
-    width: 98%;
+    width: 500px;
     overflow-y: scroll;
 }
 table, th, td {
     border-collapse: collapse;
     border: 1px solid black;
+    text-align: center;
+    padding: 1px;
+}
+
+h1 {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+}
+h2 {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    width: 200px;
+    border-radius: 20px;
+    margin: 10px auto;
 }
 #list {
-    width: 500px;
+    width: fit-content;
     height: 500px;
     overflow-y: scroll;
+    margin: 15px auto;
+    padding: 5px 0px 5px 5px;
+    background-color: white;
+    border-radius: 10px;
+}
+#details {
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    margin: 15px auto;
+    padding-left: 20px;
+    border-radius: 10px;
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+form > div:first-of-type {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form > div:last-of-type {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form > div:last-of-type > input[type="text"], form > div:last-of-type > button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+form > div > label, form > div > input[type="radio"] {
+    margin: 0 auto;
+}
+
+button, input[type="text"] {
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input[type="radio"]:hover, button:hover {
+    transform: scale(1.1);
+}
+
+input[type="radio"], button {
+    transition: 0.2s linear;
+}
+
+tr {
+    cursor: pointer;
 }
