@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="./js/script.js" defer></script>
+        <link rel="stylesheet" href="./css/styles.css">
+        <title>Assignment 3 | Working with APIs</title>
+    </head>
+    <body>
+        <label>Platform:</label>
+        <input type="radio" name="platform" value="pc">
+        <label>PC</label>
+        <input type="radio" name="platform" value="browser">
+        <label>Browser</label>
+        <input type="radio" name="platform" value="all">
+        <label>All</label>
+
+        <h1>Search for a game!</h1>
+        <input type="text" id="searchInput" placeholder="Enter game title...">
+        <button id="searchButton">Search</button>
+        <button id="clearButton">Clear</button>
+        <h2>Search Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Platform</th>
+                    <th>Release Date</th>
+                    <th>Genre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Search results will be populated here -->
+            </tbody>
+        </table>
+    </body>
+</html>
