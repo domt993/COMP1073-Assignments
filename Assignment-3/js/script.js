@@ -57,7 +57,6 @@ function displayGames(json) {
     json.forEach(game => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td class="game-id">${game.id}</td>
             <td>${game.title}</td>
             <td>${game.platform}</td>
             <td>${game.release_date}</td>
