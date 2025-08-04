@@ -71,3 +71,44 @@ function displayGames(json) {
         tableBody.appendChild(row);
     });
 }
+
+// Fetch Details Function to get the details of a specific game when a row is clicked
+function fetchDetails(event, id) {
+    event.preventDefault();
+    // Constructing the URL
+    const url = `${baseURL}/game?id=${id}`;
+    // Fetching the game details from the API using the constructed URL and the header parameters
+    fetch(url, {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-key': 'a315655d9bmsh20a38320fb1b1ecp1bfbc0jsn367f200584af',
+            'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+    })
+    // Returning the response in JSON format if the response is OK
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error fetching game details!");
+        }
+        return response.json();
+    })
+    // Displaying the game details in the details div
+    .then(json => {
+        displayDetails(json)
+    })
+}
+// Display Details Function to show the details of the game that the user clicked on
+function displayDetails(json) {
+    // Clearing the previous details in the div
+    div.innerHTML = '';
+    // Adding the game details of the clicked game.
+    div.innerHTML = `
+    <h2>${json.title}</h2>
+    <p><strong>Platform:</strong> ${json.platform}</p>
+    <p><strong>Release Date:</strong> ${json.release_date}</p>
+    <p><strong>Genre:</strong> ${json.genre}</p>
+    <p><strong>Description:</strong> ${json.short_description}</p>
+    <p><strong>Developer:</strong> ${json.developer}</p>
+    <p><strong>Publisher:</strong> ${json.publisher}</p>
+    <p><strong>Game URL:</strong> <a href="${json.game_url}" target="_blank">${json.game_url}</a></p>`
+}
